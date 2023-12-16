@@ -44,9 +44,7 @@ export async function adminLogin(req, res) {
         console.log(success);
         const {username}=usr
         if (success !== true) return res.status(404).send("email or password doesnot exist");
-        const token = await sign({ 
-            
-         }, process.env.JWT_KEY, { expiresIn: "24h" })
+        const token = await sign({username}, process.env.JWT_KEY, { expiresIn: "24h" })
         console.log(username);
         // console.log(token);
         res.status(200).send({ msg: "successfullly login", token })
@@ -61,12 +59,18 @@ export async function home(req,res)
 {
     try {
         console.log(req.user);
-        const {email}=req.user;
-        res.status(200).send({msg:`${email}`})
+        const {username}=req.user;
+        res.status(200).send({msg:`${username}`})
         res.end()
 
     } catch (error) {
         res.status(404).send(error)
 
     }
+}
+export async function adminFrgtPwd(req, res) {
+    const {email,password}=req.body;
+    const hashedPassword = await bcrypt.hash(password, 10);
+    let task = await admin_schema.updateOne({ email }, { $set: { password: hashedPassword } });
+    res.status(200).send(task);
 }

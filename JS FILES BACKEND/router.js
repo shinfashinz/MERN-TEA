@@ -7,6 +7,7 @@ const router=Router();
 router.route("/addadmin").post(controller.addAdmin);
 router.route("/adminlogin").post(controller.adminLogin);
 router.route("/adminhome").get(Auth,controller.home);
+router.route("/Forgotpswd").patch(controller.adminFrgtPwd);
 
 
 

@@ -18,7 +18,7 @@ const Login=async(e)=>{
       console.log(data);
       if(res.status!==404){
         const token=data.token
-        localStorage.setItem("token",JSON.stringify(token))
+        localStorage.setItem("admin_token",JSON.stringify(token))
         navigate("/adminhome")
       }
     } catch (error) {
@@ -35,6 +35,7 @@ const Login=async(e)=>{
             <div><input type="password"  placeholder='Password' name='password' onChange={(e)=>setPassword(e.target.value)}/></div>
             <button onClick={Login} >Login</button>
             <div className='reg-btn'><Link to='/adminregister' className='regbtn'>Register</Link></div>
+            <div className='frgt-btn'><Link to='/Forgotpswd' className='frgtpwd'>ForgotPassword</Link></div>
             </form>
         </div>
       </div>
