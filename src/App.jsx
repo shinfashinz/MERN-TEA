@@ -7,6 +7,9 @@ import AdminRegistration from './COMPONENTS/ADMIN/ADMINRESTRATION/AdminRegistrat
 import Adminhome from './COMPONENTS/ADMIN/ADMIN HOME/Adminhome'
 import Forgotepswd from './COMPONENTS/FORGOT/Forgotepswd'
 
+import AddCategory from './COMPONENTS/ADMIN/ADMIN CATEGERY/AddCategory'
+import Adminproduct from './COMPONENTS/ADMIN/ADMIN PRODUCT/Adminproduct'
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -19,6 +22,9 @@ function App() {
   <Route path='/' Component={AdminLogin}/>
   <Route path='/adminhome' Component={Adminhome}/>
   <Route path='/Forgotpswd' Component={Forgotepswd}/>
+  <Route path='/adminhome' Component={Adminhome}/>
+  <Route path='/addcategory' Component={AddCategory}/>
+  <Route path='/addproduct' Component={Adminproduct}/>
 </Routes>
 </BrowserRouter>
     </>

@@ -4,6 +4,7 @@ import bcrypt from 'bcrypt'
 import jsonwebtoken from 'jsonwebtoken'
 import pkg from "jsonwebtoken";
 import { Schema } from 'mongoose';
+import category_schema from "./category.model.js"
 const {sign}=pkg
 
 export async function addAdmin(req,res){
@@ -73,4 +74,38 @@ export async function adminFrgtPwd(req, res) {
     const hashedPassword = await bcrypt.hash(password, 10);
     let task = await admin_schema.updateOne({ email }, { $set: { password: hashedPassword } });
     res.status(200).send(task);
+}
+ 
+export async function myCategory(req,res){
+    try {
+        const{category,about}=req.body;
+        console.log(category,about);
+        if(!(category&&about))
+{
+    return res.status(404).send("fields are empty")
+
+}  
+
+const task=await category_schema.create({category,about});
+res.status(200).send(task)
+  
+    } catch (error) {
+        console.log(error);
+        res.status(500).send("Internal Server Is Error");
+    }
+}
+export async function getCategory(req,res){ 
+    let task=await category_schema.find()
+    res.status(200).send(task)
+}
+
+export function delCategory(req,res)
+{
+    const{id}=req.params;
+    const data=category_schema.deleteOne({_id:id})
+    data.then((resp)=>{
+        res.status(200).send(resp)
+    }).catch((error)=>{
+        res.status(404).send(error)
+    })
 }

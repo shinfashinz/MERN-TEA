@@ -9,6 +9,12 @@ router.route("/adminlogin").post(controller.adminLogin);
 router.route("/adminhome").get(Auth,controller.home);
 router.route("/Forgotpswd").patch(controller.adminFrgtPwd);
 
+// CATEGORY PAGE
+router.route("/addcategory").post(controller.myCategory);
+router.route("/getcategory").get(controller.getCategory);
+
+router.route("/delcategory/:id").delete(controller.delCategory)
+
 
 
 
