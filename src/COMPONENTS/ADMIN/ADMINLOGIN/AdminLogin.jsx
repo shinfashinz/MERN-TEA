@@ -42,6 +42,7 @@ const Login=async(e)=>{
       
     </div>
   )
+
 }
 
 export default AdminLogin

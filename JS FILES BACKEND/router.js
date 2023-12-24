@@ -14,6 +14,7 @@ router.route("/addcategory").post(controller.myCategory);
 router.route("/getcategory").get(controller.getCategory);
 
 router.route("/delcategory/:id").delete(controller.delCategory)
+router.route("/addproduct").post(controller.AddProducts)
 
 
 

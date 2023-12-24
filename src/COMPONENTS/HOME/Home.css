@@ -1,0 +1,88 @@
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: wheat;
+    
+}
+.nav-left-logo{
+    margin-left: 40px;
+    margin-top: 20px;
+}
+.nav-serch{
+    margin-top: 20px;
+ 
+
+}
+.nav-serch input{
+    width: 400px;
+    border-radius: 10px;
+    border: 1px solid white;
+}
+.nav-right-buttons{
+    margin-top: 20px;
+    margin-right: 40px;
+
+}
+.nav-right-buttons button{
+    color: rgb(147, 106, 5);
+   margin-left: 10px;
+   border-radius: 5px;
+   border: white;
+   padding:1px 20px 1px 20px;
+}
+.carousel-item-active {
+    width: 100%;
+
+
+}
+.carosel-images img{
+height: auto;
+}
+.my-scooter,.my-cooffecup,.my-cooffecup,.my-snaks,.my-replacement{
+    width: 8%;
+    height: 5%;
+  
+}
+.react-icons{
+    display: flex;
+
+   margin-top: 5%;
+    justify-content:space-evenly;
+}
+.rect-icon-description{
+    display: flex;
+    margin-top: 1%;
+    justify-content:space-evenly;
+  
+}
+.welcome{
+    background-color:rgb(36, 74, 36);
+    margin-top: 7%;
+    color:white; 
+
+}
+.welcome-headding{
+text-align: center;
+
+}
+.welcome-description p{
+    width: 80%;
+    text-align: center;
+    margin-left: 12%;
+    
+    
+}
+.welcome-imges{
+    display: flex;
+    gap: 50px;
+}
+.welcome-imges img{
+    margin-top: 30px;
+    width: 30%;
+    height: 30%;
+}
+.welcome-headding{
+   padding-top: 30px;
+}
+/* ...................................... foooottterrr ..........................  */

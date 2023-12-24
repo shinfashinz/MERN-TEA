@@ -1,9 +1,9 @@
 import admin_schema from './admin.model.js'
+import product_schema from './product.model.js'
 
 import bcrypt from 'bcrypt'
 import jsonwebtoken from 'jsonwebtoken'
 import pkg from "jsonwebtoken";
-import { Schema } from 'mongoose';
 import category_schema from "./category.model.js"
 const {sign}=pkg
 
@@ -109,3 +109,14 @@ export function delCategory(req,res)
         res.status(404).send(error)
     })
 }
+export async function AddProducts(req, res) {
+    try {
+      const { ...products } = req.body;
+      const task=await product_schema.create({ ...products });
+  
+      res.status(200).send(task);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Internal Server Error");
+    }
+  }

@@ -1,6 +1,7 @@
 .adminlogin-main{
-    background:black;
-    height: 92vh;
+   background-image: url(/public/samoosa.avif);
+   background-size: cover;
+    height: 100vh;
     padding-top: 9%;
 }
 .admin-login-card-heading{

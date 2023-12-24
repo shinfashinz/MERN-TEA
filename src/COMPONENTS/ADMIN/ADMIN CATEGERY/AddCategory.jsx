@@ -33,7 +33,6 @@ const AddCategory = () => {
 
   return (
     <div>
-      haai
         <div className="container">
 	
 	<div className="modal">

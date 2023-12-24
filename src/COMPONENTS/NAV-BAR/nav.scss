@@ -1,0 +1,46 @@
+.navbar-main{
+    a {
+        font-size:14px;
+        font-weight:700
+
+      }
+      nav{
+        height: 80px;
+      }
+      .superNav {
+        font-size:13px;
+      }
+      // .navbar-brand{
+      //   background-color: rgb(2, 8, 80);
+      //   color: white;
+      //   padding: 12px 10px;
+      //   font-weight: 900;
+      //   letter-spacing: 1px;
+      //   border-radius: 8px;
+      // }
+      .form-control {
+        outline:none !important;
+        box-shadow: none !important;
+      }
+      .btn{
+        background-color: rgb(36, 74, 36);
+      }
+      .sss{
+        background-color: rgb(36, 74, 36);
+      }
+    //   .form-control{
+    //     border: 1px solid rgb(2, 8, 80);
+    //   }
+
+
+
+
+
+
+
+      @media screen and (max-width:540px){
+        .centerOnMobile {
+          text-align:center
+        }
+      }
+}

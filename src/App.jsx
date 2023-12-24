@@ -9,6 +9,7 @@ import Forgotepswd from './COMPONENTS/FORGOT/Forgotepswd'
 
 import AddCategory from './COMPONENTS/ADMIN/ADMIN CATEGERY/AddCategory'
 import Adminproduct from './COMPONENTS/ADMIN/ADMIN PRODUCT/Adminproduct'
+import Home from './COMPONENTS/HOME/Home'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -25,6 +26,8 @@ function App() {
   <Route path='/adminhome' Component={Adminhome}/>
   <Route path='/addcategory' Component={AddCategory}/>
   <Route path='/addproduct' Component={Adminproduct}/>
+  <Route path='/home' Component={Home}/>
+  
 </Routes>
 </BrowserRouter>
     </>
