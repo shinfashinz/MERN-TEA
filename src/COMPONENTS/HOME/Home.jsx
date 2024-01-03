@@ -4,6 +4,7 @@ import { GiScooter } from "react-icons/gi";
 import { GiCoffeeCup } from "react-icons/gi";
 import { GiHamburger } from "react-icons/gi";
 import { TbReplace } from "react-icons/tb";
+
 import Nav from '../NAV-BAR/Nav';
 const Home = () => {
   return (
@@ -82,15 +83,45 @@ We invite you to become a part of our coffee family, where every coffee lover is
   </div>
 </div> 
 {/* ................................................................................................. */}
-<div className="coffe-cup-description">
-
-  <div className="section1">
-    <div className="section-left">
-      <div className="logo"></div>
-    </div>
+<div className="banner-split">
+  <div className="banner1">
+    <img src="/banner23.webp" alt="" />
+  </div>
+  <div className="banner2-description">
+    <img src="/bannerside.webp" alt="" />
+   <div className="description-inside-banner">
+   <h3>
+Best Business  You Can Start for High Income with  London Coffee Franchise</h3>
+    <h6>
+London Coffee culture is a delightful blend of tradition and innovation. From sipping a classic flat white to indulging in inventive latte art, the city offers something for every coffee enthusiast.
+</h6>
+<p>Whether you prefer cozy nooks or bustling cafes, London’s diverse neighborhoods provide a variety of coffee experiences to explore.</p>
+   </div>
   </div>
 </div>
+{/* ...................................................................................... */}
 
+<div className="why-london-tea">
+<div className="london-tea">
+  <div className="london-tea-left">
+<h3>Why Franchise London Coffee??</h3>
+<h6>
+
+London Coffee gives an entrepreneur the best of both worlds – the ability to own their franchise business, and ongoing access to support in marketing, advertising, recruiting, retention, training, management, and business. Planning. In addition, they have the power of an international brand working for them, 24 hours a day, 7 days a week, to bring them more business.
+<p>
+The ongoing business relationship we provide within the London coffee franchise includes the service, the products, and trademarks, as well as the entire business concept itself from marketing strategy, plan, Standard Operating Procedure, systems, formats, audits, billing software, training, quality control, ongoing assistance, guidance and supervision. In short, it provides small business (the franchisee) with the tools of big business (provided by the franchisor).
+</p>
+</h6>
+  </div>
+
+  <div className="london-tea-right">
+  <div className="london-tea-img">
+      <img src="/londoncoffee.webp" alt="" />
+  </div>
+
+  </div>
+</div>
+</div>
 
    </div>
   )

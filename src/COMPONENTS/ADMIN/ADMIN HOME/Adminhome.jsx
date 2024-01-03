@@ -1,7 +1,12 @@
 import React, { useState,useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import './adminhome.css'
+import './Adminhome.scss'
+import { FcEditImage } from "react-icons/fc";
+import { FcEmptyTrash } from "react-icons/fc";
+import { FcAddDatabase } from "react-icons/fc";
+import { FcComboChart } from "react-icons/fc";
+import { FcOnlineSupport } from "react-icons/fc";
 const Adminhome = () => {
 
 
@@ -13,6 +18,14 @@ const Adminhome = () => {
   useEffect(()=>{
     getCategory()
   },[])
+  const Logout=(e)=>{
+    e.preventDefault();
+    const confirmed = window.confirm("Are you sure you want to logout?");
+    if (confirmed) {
+        localStorage.clear();
+       navigate("/admin")
+    }
+}
 
  const delCategory=async(id)=>{
   // e.preventDefault();
@@ -42,62 +55,60 @@ const Adminhome = () => {
         getName() 
     },[])
   return (
-    <div>
-      <div className="adminHomemain">
-        <div className="header">
-            <div className="headerLeft"></div>
-            <div className="headerRight">
-                <div className="dispalyUsername">ADMIN:{msg}</div>
-            </div>
+    <div className='adminHomePageMain'>
+      <div className="header-main">
+      <div className="header-left">
+        <Link to='/admin' className='back-btn'>Back</Link>
+      </div>
+       <div className="header-right">
+       <div className="display-username">
+            <span><i className="fa fa-user" aria-hidden="true"></i>{msg} <button onClick={Logout}><i className="fa fa-sign-out" aria-hidden="true"></i></button></span>
+        </div>
+       </div>
+      </div>
+
+      <div className="hero">
+        <div className="hero-left">
+          <h4>Category</h4>
+          <div className="cat-ithems">
+            {
+            getCat.map((data,index)=>
+            <table key={index}>
+            <tr>
+              <th><Link to={`/prooood/${data.category}`} className='link'><span>{data.category}</span></Link></th>
+              <td><Link className='edit-btn' to={`/editCategory/${data._id}`}><FcEditImage /></Link>
+              <Link className='delete-btn'  to={`#${data._id}`} onClick={() => delCategory(data._id)}><FcEmptyTrash /></Link></td>
+            </tr>
+          </table>
+          )
+          }
+          </div>
+          {/* <div className="add-cat-section">
+            <Link className='add-cat-btn' to='/addCategory'>Add New Category <i className="fa fa-plus" aria-hidden="true"></i></Link>
+          </div>
+          <div className="add-product-section">
+            <Link className='add-product-btn' to='/addProduct'>Add Products</Link>
+          </div> */}
+        </div>
+        {/* <div className="line"></div> */}
+        <div className="hero-right">
+      <div className="upper-btn">
+      <div className="add-cat-button">
+       <Link className='add-cat-btn-right' to='/addCategory'>Add New Category <FcAddDatabase className='add-icon'/> </Link>
+       </div>
+       <div className="add-prdct-button">
+       <Link className='add-product-btn-right' to='/addProduct'>Add Products <FcAddDatabase className='add-icon'/></Link>
+       </div>
+       <div className="sales-button">
+       <Link className='sales-btn-right'>Sales <FcComboChart className='add-icon'/></Link>
+       </div>
+       <div className="services-button">
+       <Link className='service-btn-right' to='/AllCustomers'>Customers <FcOnlineSupport className='add-icon'/></Link>
+       </div>
+      </div>
+      <div></div>
         </div>
       </div>
-{/* CATEGERY ,product */}
-
-
-        
-<div>
-    <div className="admin-name">
-      <a href=""><i class="fa fa-arrow-left" aria-hidden="true"></i>  Back</a>
-    <h3> <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-{msg}</h3>
-    </div>
-
-    <div className="hero">
-      <div className="category">
-        <h3>Categories</h3>
-      <Link to='/addcategory'> <button id='category-btn'> <i class="fa fa-plus-circle" aria-hidden="true"></i> Add Category</button>
-</Link>
-        <table className='category-table'>
-         
-         {
-          getCat.map((data,index)=>
-          
-          <tr key={index}>
-          <th>{data.category}</th>
-          <td className='tab-btns'><button>EDIT</button>
-          <Link to={`#${data._id}`}> <button onClick={()=>delCategory(data._id)}>DELETE</button></Link></td>
-
-        </tr>
-          
-          )
-         }
-            </table>
-      </div>
-      <div className="products">
-      <h3>Products</h3>
-     <Link to='/addproduct'> <button id='category-btn'> <i class="fa fa-plus-circle" aria-hidden="true"></i> Add Product</button></Link>
-
-
-      </div>
-    </div>
-
-
-      </div>
-
-
-
-
-
 
     </div>
   )

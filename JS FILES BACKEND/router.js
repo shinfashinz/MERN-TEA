@@ -15,6 +15,11 @@ router.route("/getcategory").get(controller.getCategory);
 
 router.route("/delcategory/:id").delete(controller.delCategory)
 router.route("/addproduct").post(controller.AddProducts)
+router.route("/getCatDetails/:id").post(controller.getCatDetails);
+router.route("/editCategory/:id").patch(controller.editCategory);
+
+router.route("/getCatWiseProducts/:category").get(controller.getCategoryWisedProduct);
+router.route("/delProduct/:id").delete(controller.delProduct);
 
 
 
