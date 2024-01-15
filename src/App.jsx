@@ -12,6 +12,7 @@ import Adminproduct from './COMPONENTS/ADMIN/ADMIN PRODUCT/Adminproduct'
 import Home from './COMPONENTS/HOME/Home'
 import Editcategory from './COMPONENTS/EDITCATEGORY/Editcategory'
 import ProductViewCatVise from './COMPONENTS/ADMIN/PRODUCT VIEW/ProductViewCatVise'
+import CustomerLogin from './COMPONENTS/USER/CustomerLogin'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -31,6 +32,7 @@ function App() {
   <Route path='/home' Component={Home}/>
   <Route path='/editcategory/:id' Component={Editcategory}/>
   <Route path='/prooood/:category' Component={ProductViewCatVise}/>
+  <Route path='/customerlogin' Component={CustomerLogin}/>
   
 </Routes>
 </BrowserRouter>

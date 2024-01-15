@@ -99,6 +99,18 @@ London Coffee culture is a delightful blend of tradition and innovation. From si
    </div>
   </div>
 </div>
+{/* ............................................................................................. */}
+
+
+<div className="category-wise-display-home">
+
+  <div className="my-category">
+    <div className="category-headding">
+      <h4>Category</h4>
+    </div>
+  </div>
+</div>
+
 {/* ...................................................................................... */}
 
 <div className="why-london-tea">
