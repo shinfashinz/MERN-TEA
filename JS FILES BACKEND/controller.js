@@ -161,3 +161,7 @@ export async function AddProducts(req, res) {
         res.status(404).send(error)
     })
 }
+export async function getAllProducts(req,res){
+    let task=await product_schema.find()
+    res.status(200).send(task)
+  }

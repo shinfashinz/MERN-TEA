@@ -21,6 +21,8 @@ router.route("/editCategory/:id").patch(controller.editCategory);
 router.route("/getCatWiseProducts/:category").get(controller.getCategoryWisedProduct);
 router.route("/delProduct/:id").delete(controller.delProduct);
 
+router.route("/getAllProducts").get(controller.getAllProducts);
+
 
 
 

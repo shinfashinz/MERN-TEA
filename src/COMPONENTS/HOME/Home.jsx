@@ -7,6 +7,19 @@ import { TbReplace } from "react-icons/tb";
 
 import Nav from '../NAV-BAR/Nav';
 const Home = () => {
+  const [getProducts,setProducts]=useState([])
+  
+  // http://localhost:7000/sportstrack/getAllProducts
+  const getAllProducts=async()=>{
+    const res=await axios.get("http://localhost:7000/sportstrack/getAllProducts") 
+    // console.log(res.data);
+    setProducts(res.data)
+    console.log(getProducts);
+  }
+  useEffect(()=>{
+    getAllProducts()
+  },[])
+
   return (
     <div>
       
@@ -102,14 +115,33 @@ London Coffee culture is a delightful blend of tradition and innovation. From si
 {/* ............................................................................................. */}
 
 
-<div className="category-wise-display-home">
-
-  <div className="my-category">
-    <div className="category-headding">
-      <h4>Category</h4>
+<div className="categoreis-products">
+     <div className="cat-product-heading">
+     <h3 id='kids'>Kids Collection</h3>
+      <div className="cat-ul"></div>
+     </div>
+  
+    <div className="collection-cards">
+   {
+     getProducts.filter((data) => data.category === 'Kids')
+     .map((data, index) => (
+       <Link className='link' key={index} to={/productDetailsCustomer/${data._id}}>
+         <div className="Card"><div className="prdct-thumnalil"><img src={data.banner} alt="" /></div>
+     <div className="card-details">
+     <p className='item-title'>{data.product_name}</p>
+     <div><span className="prdct-description">{data.description}</span></div>
+    <div className="prices">
+    <div><p className='price'>₹ {data.price}</p></div>
+    <div><strike><p className='og-price'>₹ 799</p></strike></div>
     </div>
-  </div>
-</div>
+     </div>
+      </div>
+       </Link>
+     ))
+   }
+    </div>
+    
+    </div>
 
 {/* ...................................................................................... */}
 
