@@ -125,7 +125,7 @@ London Coffee culture is a delightful blend of tradition and innovation. From si
    {
      getProducts.filter((data) => data.category === 'Kids')
      .map((data, index) => (
-       <Link className='link' key={index} to={/productDetailsCustomer/${data._id}}>
+       <Link className='link' key={index} to={`/productDetailsCustomer/${data._id}`}>
          <div className="Card"><div className="prdct-thumnalil"><img src={data.banner} alt="" /></div>
      <div className="card-details">
      <p className='item-title'>{data.product_name}</p>
